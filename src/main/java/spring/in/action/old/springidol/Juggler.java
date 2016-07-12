@@ -1,7 +1,5 @@
-package spring.in.action.springidol;
+package spring.in.action.old.springidol;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Juggler implements Performer {
 

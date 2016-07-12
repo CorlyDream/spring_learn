@@ -1,4 +1,4 @@
-package spring.in.action.inter;
+package spring.in.action.old.inter;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

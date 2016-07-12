@@ -1,4 +1,4 @@
-package spring.in.action.inter;
+package spring.in.action.old.inter;
 
 public class LowerLetter implements ChangeLetter {
 	

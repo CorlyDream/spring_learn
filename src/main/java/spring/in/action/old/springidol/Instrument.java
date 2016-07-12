@@ -1,4 +1,4 @@
-package spring.in.action.springidol;
+package spring.in.action.old.springidol;
 
 public interface Instrument {
 
