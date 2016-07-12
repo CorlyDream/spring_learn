@@ -5,7 +5,6 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
-	<bean id="stuInterceptor" class="aop.jikexueyuan.spring.aop.aspect.StuInterceptor"></bean>
 	<bean id="stu" class="aop.jikexueyuan.spring.aop.aspect.Student"></bean>
 	
 </beans>
