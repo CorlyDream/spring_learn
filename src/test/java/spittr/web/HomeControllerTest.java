@@ -1,6 +1,5 @@
 package spittr.web;
 
-import static org.junit.Assert.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
@@ -15,4 +14,6 @@ public class HomeControllerTest {
 		MockMvc mockMvc = MockMvcBuilders.standaloneSetup(homeController).build();
 		mockMvc.perform(get("/")).andExpect(view().name("home"));
 	}
+	
+	
 }
