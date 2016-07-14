@@ -3,32 +3,39 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
-	<bean id="duke" class="com.springinaction.springidol.Juggler">
+	<bean id="duke" class="spring.in.action.springidol.Juggler">
 		<constructor-arg value="15" />
 	</bean>
-	<bean id="sonnet29" class="com.springinaction.springidol.Sonnet29" />
-	<bean id="poeticDuke" class="com.springinaction.springidol.PoeticJuggler">
+	<bean id="sonnet29" class="spring.in.action.springidol.Sonnet29" />
+	<bean id="poeticDuke" class="spring.in.action.springidol.PoeticJuggler">
 		<constructor-arg value="15" />
 		<constructor-arg ref="sonnet29" />
 	</bean>
-	<bean id="theStage" class="com.springinaction.springidol.Stage" 
+	<bean id="theStage" class="spring.in.action.springidol.Stage" 
 			factory-method="getInstance" />
-	<bean id="tiket" class="com.springinaction.springidol.Stage"  scope="prototype"/>
+	<bean id="tiket" class="spring.in.action.springidol.Stage"  scope="prototype"/>
 	<bean id="auditorium"
-			class="com.springinaction.springidol.Auditorium"
+			class="spring.in.action.springidol.Auditorium"
 			init-method="turnOnLights"
 			destroy-method="turnOffLights" />
 
 	
-	<bean id="saxophone" class="com.springinaction.springidol.Saxophone" />
-	<bean id="piano" class="com.springinaction.springidol.Piano" />
+	<bean id="saxophone" class="spring.in.action.springidol.Saxophone" />
+	<bean id="piano" class="spring.in.action.springidol.Piano" />
 	
-	<bean id="kenny" class="com.springinaction.springidol.Instrumentalist">
+	<bean id="kenny" class="spring.in.action.springidol.Instrumentalist">
 		<property name="song" value="Jingle Bells" />
 		<property name="instrument">
-			<bean class="com.springinaction.springidol.Saxophone" />
+			<bean class="spring.in.action.springidol.Saxophone" />
 		</property>
 	</bean>
 	
+	<bean id="hank" class="spring.in.action.springidol.OneManBand">
+		<property name="instruments">
+			<list>
+				<ref bean="gui/>
+			</list>
+		</property>
+	</bean>
 	
 </beans>
