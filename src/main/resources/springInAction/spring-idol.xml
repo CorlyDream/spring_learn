@@ -33,7 +33,7 @@
 	<bean id="hank" class="spring.in.action.springidol.OneManBand">
 		<property name="instruments">
 			<list>
-				<ref bean="gui/>
+				<ref bean="gui" />
 			</list>
 		</property>
 	</bean>

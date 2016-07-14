@@ -10,7 +10,7 @@
 <body>
 	<h1>spittles.jsp</h1>
 	<ol>
-		<c:forEach item="${spittleList }" var="spittle">
+		<c:forEach items="${spittleList }" var="spittle">
 			<li>
 				<div>${spittle.message }</div>
 				<div>
