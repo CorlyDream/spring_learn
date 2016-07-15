@@ -24,7 +24,7 @@ public class DataConfig {
         dataSource.setDriverClass(com.mysql.jdbc.Driver.class);
         dataSource.setUsername("root");
         dataSource.setPassword("root");
-        dataSource.setUrl("jdbc:mysql://127.0.0.1:3306/test?characterEncoding=UTF8&amp;zeroDateTimeBehavior=convertToNull");
+        dataSource.setUrl("jdbc:mysql://127.0.0.1:3306/test?characterEncoding=UTF8&amp;zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2b8");
         return dataSource;
     }
      
@@ -34,32 +34,33 @@ public class DataConfig {
     }
      
     @Bean
-    public SqlSessionFactoryBean sqlSessionFactoryBean() throws Exception{
+    public SqlSessionFactoryBean sqlSessionFactory() throws Exception{
         SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
+        sessionFactory.setTypeAliasesPackage("spittr.entity");
         sessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/*.xml"));
-//        Interceptor[] plugins = {getPageHelperConfig()};
-//        sessionFactory.setPlugins(plugins);
-//        sessionFactory.setConfiguration(getConfiguration());
+        Interceptor[] plugins = {getPageHelperConfig()};
+        sessionFactory.setPlugins(plugins);
+        sessionFactory.setConfiguration(getConfiguration());
         return sessionFactory;
     }
     
-//    public org.apache.ibatis.session.Configuration getConfiguration(){
-//    	org.apache.ibatis.session.Configuration configuration = new org.apache.ibatis.session.Configuration();
-//        configuration.setMapUnderscoreToCamelCase(true);
-//        return configuration;
-//    }
-//    
-//    public Interceptor getPageHelperConfig(){
-//    	Properties p = new Properties();
-//    	p.setProperty("dialect", "mysql");
-//    	p.setProperty("offsetAsPageNum", "true");
-//    	p.setProperty("rowBoundsWithCount", "true");
-//    	p.setProperty("pageSizeZero", "true");
-//    	p.setProperty("reasonable", "true");
-//    	p.setProperty("params", "pageNum=start;pageSize=limit;");
-//    	PageHelper pageHelper = new PageHelper();
-//    	pageHelper.setProperties(p);
-//    	return pageHelper;
-//    }
+    public org.apache.ibatis.session.Configuration getConfiguration(){
+    	org.apache.ibatis.session.Configuration configuration = new org.apache.ibatis.session.Configuration();
+        configuration.setMapUnderscoreToCamelCase(true);
+        return configuration;
+    }
+    
+    public Interceptor getPageHelperConfig(){
+    	Properties p = new Properties();
+    	p.setProperty("dialect", "mysql");
+    	p.setProperty("offsetAsPageNum", "true");
+    	p.setProperty("rowBoundsWithCount", "true");
+    	p.setProperty("pageSizeZero", "true");
+    	p.setProperty("reasonable", "true");
+    	p.setProperty("params", "pageNum=start;pageSize=limit;");
+    	PageHelper pageHelper = new PageHelper();
+    	pageHelper.setProperties(p);
+    	return pageHelper;
+    }
 }

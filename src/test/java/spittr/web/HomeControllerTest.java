@@ -15,15 +15,15 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
-import spittr.config.RootConfig;
+import spittr.config.DataConfig;
 import spittr.mapper.DefaultValueMapper;
 
 @Transactional(rollbackFor=Exception.class)
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes={RootConfig.class})
+@ContextConfiguration(classes={DataConfig.class})
 public class HomeControllerTest {
 	@Autowired
-	private DefaultValueMapper defaultValueDao;
+	private DefaultValueMapper defaultValueMapper;
 	
 	@Test
 	public void testHomePage() throws Exception{
@@ -34,7 +34,7 @@ public class HomeControllerTest {
 	
 	@Test
 	public void testList(){
-		List data = defaultValueDao.findByPage();
+		List data = defaultValueMapper.findByPage();
 		System.out.println(data.size());
 	}
 }

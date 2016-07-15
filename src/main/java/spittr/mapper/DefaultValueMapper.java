@@ -19,5 +19,5 @@ public interface DefaultValueMapper {
 
     int updateByPrimaryKey(DefaultValue record);
     
-    List<DefaultValue> findByPage();
+    Page<DefaultValue> findByPage();
 }

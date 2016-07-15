@@ -24,7 +24,7 @@ public class HomeController {
 	@RequestMapping("/list")
 	@ResponseBody
 	public Object findList(){
-//		PageHelper.startPage(1, 10);
+		PageHelper.startPage(1, 10);
 		return new PageInfo<>(defaultValueDao.findByPage());
 	}
 }
