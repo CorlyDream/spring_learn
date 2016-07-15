@@ -16,7 +16,9 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.servlet.view.InternalResourceView;
 
 import spittr.dao.SpittleRepository;
+import spittr.entity.DefaultValue;
 import spittr.entity.Spittle;
+import spittr.mapper.DefaultValueMapper;
 
 public class SpittleControllerTest {
 	@Test
@@ -32,6 +34,7 @@ public class SpittleControllerTest {
 			.andExpect(model().attribute("spittleList", hasItems(expectedSpittles.toArray())));
 	}
 	
+	
 	private List<Spittle> createSpittleList(int count){
 		List<Spittle> spittles = new ArrayList<>();
 		for(int i=0; i<count; i++){
@@ -39,4 +42,5 @@ public class SpittleControllerTest {
 		}
 		return spittles;
 	}
+	
 }
