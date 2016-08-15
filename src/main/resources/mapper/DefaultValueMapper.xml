@@ -11,7 +11,7 @@
   <sql id="Base_Column_List">
     id, name, age
   </sql>
-  <select id="findByPage" resultType="DefaultValue">
+  <select id="findByPage" resultType="spittr.entity.DefaultValue">
   	select 
     *
     from default_value

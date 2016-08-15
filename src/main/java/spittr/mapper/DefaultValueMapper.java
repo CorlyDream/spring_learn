@@ -1,9 +1,6 @@
 package spittr.mapper;
 
-import java.util.List;
-
 import com.github.pagehelper.Page;
-
 import spittr.entity.DefaultValue;
 
 public interface DefaultValueMapper {
@@ -18,6 +15,6 @@ public interface DefaultValueMapper {
     int updateByPrimaryKeySelective(DefaultValue record);
 
     int updateByPrimaryKey(DefaultValue record);
-    
+
     Page<DefaultValue> findByPage();
 }

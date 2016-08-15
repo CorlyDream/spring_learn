@@ -1,9 +1,6 @@
 package spittr.config;
 
-import java.util.Properties;
-
-import javax.sql.DataSource;
-
+import com.github.pagehelper.PageHelper;
 import org.apache.ibatis.plugin.Interceptor;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
@@ -13,7 +10,8 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 
-import com.github.pagehelper.PageHelper;
+import javax.sql.DataSource;
+import java.util.Properties;
 
 @Configuration
 @MapperScan("spittr.mapper")
@@ -27,6 +25,10 @@ public class DataConfig {
         dataSource.setUrl("jdbc:mysql://127.0.0.1:3306/test?characterEncoding=UTF8&amp;zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2b8");
         return dataSource;
     }
+	
+//	public BasicDataSource dataSource(){
+//		
+//	}
      
     @Bean
     public DataSourceTransactionManager transactionManager()  {
