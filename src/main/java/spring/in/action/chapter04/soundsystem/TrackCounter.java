@@ -1,4 +1,4 @@
-package spring.in.action.chapter4.soundsystem;
+package spring.in.action.chapter04.soundsystem;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +11,7 @@ import org.aspectj.lang.annotation.Pointcut;
 public class TrackCounter {
 	private Map<Integer, Integer> trackCounts = new HashMap<>();
 	
-	@Pointcut("execution(* spring.in.action.chapter4.soundsystem.CompactDisc.playTrack(int)) "
+	@Pointcut("execution(* spring.in.action.chapter04.soundsystem.CompactDisc.playTrack(int)) "
 			+ "&& args(trackNumber)")
 	public void trackPlayed(int trackNumber){}
 	

@@ -1,4 +1,4 @@
-package spring.in.action.chapter1.soundsystem;
+package spring.in.action.chapter01.soundsystem;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

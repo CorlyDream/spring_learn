@@ -1,4 +1,4 @@
-package spring.in.action.chapter4.concert;
+package spring.in.action.chapter04.concert;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

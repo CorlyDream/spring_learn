@@ -1,4 +1,4 @@
-package spring.in.action.chapter4.concert;
+package spring.in.action.chapter04.concert;
 
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
@@ -9,8 +9,7 @@ import org.aspectj.lang.annotation.Pointcut;
 @Aspect
 public class Audience {
 	
-	
-	@Pointcut("execution(** spring.in.action.chapter4.concert.Performance.perform())")
+	@Pointcut("execution(** spring.in.action.chapter04.concert.Performance.perform())")
 	public void performance(){}
 	
 	@Before("performance()")

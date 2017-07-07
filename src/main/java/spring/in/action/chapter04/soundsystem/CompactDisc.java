@@ -1,4 +1,4 @@
-package spring.in.action.chapter4.soundsystem;
+package spring.in.action.chapter04.soundsystem;
 
 
 public interface CompactDisc {
