@@ -17,6 +17,11 @@ public class ConcertConfig {
 	
 	@Bean
 	public Performance performance(){
-		return new Performance();
+		return new PerformanceImpl();
 	}
+
+    @Bean
+    public Encoreable encoreable() {
+        return new DefaultEncoreable();
+    }
 }

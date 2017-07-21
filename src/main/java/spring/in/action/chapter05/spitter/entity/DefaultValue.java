@@ -1,4 +1,4 @@
-package spittr.entity;
+package spring.in.action.chapter05.spitter.entity;
 
 public class DefaultValue {
     private Integer id;

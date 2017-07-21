@@ -1,4 +1,7 @@
-package spittr.entity;
+package spring.in.action.chapter05.spitter.entity;
+
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import java.util.Date;
 
@@ -38,5 +41,15 @@ public class Spittle {
 
 	public Double getLongitude() {
 		return longitude;
+	}
+
+	@Override
+	public int hashCode() {
+		return HashCodeBuilder.reflectionHashCode(this, "id", "time");
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		return EqualsBuilder.reflectionEquals(this, obj, "id", "time");
 	}
 }

@@ -2,8 +2,8 @@ package spring.in.action.chapter10.jdbc;
 
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.stereotype.Repository;
+import spring.in.action.chapter05.spitter.entity.DefaultValue;
 
-import spittr.entity.DefaultValue;
 
 @Repository
 public class DefaultValueDao {

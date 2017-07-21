@@ -1,8 +1,7 @@
 package spring.in.action.chapter10.jdbc;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-import spittr.entity.DefaultValue;
+import spring.in.action.chapter05.spitter.entity.DefaultValue;
 
 public class Main {
 
